@@ -4,7 +4,7 @@ using System;
 
 namespace packagePersona
 {
-
+    [Serializable]
     public class Persona
     {
         private string nombre;
