@@ -9,7 +9,7 @@ namespace packagePersona
     {
         private string codigoE;
         private string nameCarreraE;
-    }
+    
     public Estudiante()
         {
         }
@@ -24,3 +24,4 @@ namespace packagePersona
         public string CodigoE { get => codigoE; set => codigoE = value; }
         public string NameCarreraE { get => nameCarreraE; set => nameCarreraE = value; }
     }
+}
