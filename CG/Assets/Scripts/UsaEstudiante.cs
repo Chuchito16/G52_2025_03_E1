@@ -2,9 +2,8 @@ using UnityEngine;
 using System;
 using packagePersona;
 using System.Collections.Generic;
-{
 
-}
+
 public class UsaEstudiante : MonoBehaviour
 {
     List<Estudiante> listaE = new List<Estudiante>();
@@ -28,6 +27,6 @@ public class UsaEstudiante : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
