@@ -6,11 +6,10 @@ using packageGeometria;
 
 public class Utilidades : MonoBehaviour
 {
-    // Referencia al controlador que mantiene las listas en memoria
-    [SerializeField] UIEstudiantePunto uiCtrl;   // arrástralo en el Inspector
+    
+    [SerializeField] UIEstudiantePunto uiCtrl;  
 
-    // ----- Métodos para usar directamente en los botones -----
-    // Botón "Guardar JSON" (guarda estudiantes y puntos)
+    
     public void GuardarJSON()
     {
         GuardarEstudiantesJSON(uiCtrl.listaE);
@@ -18,11 +17,10 @@ public class Utilidades : MonoBehaviour
         Debug.Log("Guardado OK (Estudiantes y Puntos).");
     }
 
-    // (Opcional) Si quieres botones separados:
     public void GuardarSoloEstudiantes() => GuardarEstudiantesJSON(uiCtrl.listaE);
     public void GuardarSoloPuntos() => GuardarPuntosJSON(uiCtrl.listaP);
 
-    // ====== Métodos utilitarios (quedan estáticos) ======
+    
     [System.Serializable] class EstudiantesWrap { public List<Estudiante> items; }
     [System.Serializable] class PuntosWrap { public List<Punto2D> items; }
 

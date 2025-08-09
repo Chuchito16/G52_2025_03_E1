@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;          // Botones
-using TMPro;                   // TMP_InputField, TMP_Text
+using UnityEngine.UI;         
+using TMPro;                  
 using System.Collections.Generic;
 using System.Globalization;
 using packagePersona;
@@ -8,7 +8,7 @@ using packageGeometria;
 
 public class UIEstudiantePunto : MonoBehaviour
 {
-    // ====== Inputs Estudiante (TMP) ======
+    
     [Header("Estudiante - Inputs (TMP)")]
     [SerializeField] TMP_InputField nombreIF;
     [SerializeField] TMP_InputField emailIF;
@@ -16,17 +16,17 @@ public class UIEstudiantePunto : MonoBehaviour
     [SerializeField] TMP_InputField codigoIF;
     [SerializeField] TMP_InputField carreraIF;
 
-    // ====== Inputs Punto2D (TMP) ======
+ 
     [Header("Puntos - Inputs (TMP)")]
     [SerializeField] TMP_InputField puntoXIF;
     [SerializeField] TMP_InputField puntoYIF;
 
-    // ====== Textos de salida (TMP) ======
+  
     [Header("Salidas (TMP Text)")]
     [SerializeField] TMP_Text listaEstudiantesTXT;
     [SerializeField] TMP_Text listaPuntosTXT;
 
-    // ====== Botones ======
+  
     [Header("Botones")]
     [SerializeField] Button agregarEstudianteBtn;
     [SerializeField] Button eliminarEstudianteBtn;
@@ -34,27 +34,27 @@ public class UIEstudiantePunto : MonoBehaviour
     [SerializeField] Button agregarPuntoBtn;
     [SerializeField] Button eliminarPuntoBtn;
 
-    // ====== Datos en memoria ======
+
     public List<Estudiante> listaE = new();
     public List<Punto2D> listaP = new();
 
     void Awake()
     {
-        // Conectar botones por código (sin OnClick del Inspector)
+        
         if (agregarEstudianteBtn) agregarEstudianteBtn.onClick.AddListener(AgregarEstudiante);
         if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.AddListener(EliminarUltimoEstudiante);
         if (guardarJsonBtn) guardarJsonBtn.onClick.AddListener(GuardarJSON);
         if (agregarPuntoBtn) agregarPuntoBtn.onClick.AddListener(AgregarPunto);
         if (eliminarPuntoBtn) eliminarPuntoBtn.onClick.AddListener(EliminarUltimoPunto);
 
-        // Atajos con ENTER (TMP)
+       
         if (carreraIF) carreraIF.onSubmit.AddListener(_ => AgregarEstudiante());
         if (puntoYIF) puntoYIF.onSubmit.AddListener(_ => AgregarPunto());
     }
 
     void Start()
     {
-        // Cargar desde JSON si existe
+       
         var e = Utilidades.LeerEstudiantesJSON();
         if (e != null && e.Count > 0) listaE = e;
 
@@ -66,7 +66,7 @@ public class UIEstudiantePunto : MonoBehaviour
 
     void OnDestroy()
     {
-        // Limpieza (buena práctica)
+        
         if (agregarEstudianteBtn) agregarEstudianteBtn.onClick.RemoveListener(AgregarEstudiante);
         if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.AddListener(EliminarUltimoEstudiante);
         if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.RemoveListener(EliminarUltimoEstudiante);
@@ -78,7 +78,7 @@ public class UIEstudiantePunto : MonoBehaviour
         if (puntoYIF) puntoYIF.onSubmit.RemoveAllListeners();
     }
 
-    // ====== Lógica: Estudiantes ======
+    
     void AgregarEstudiante()
     {
         if (string.IsNullOrWhiteSpace(nombreIF?.text) || string.IsNullOrWhiteSpace(codigoIF?.text))
@@ -107,7 +107,7 @@ public class UIEstudiantePunto : MonoBehaviour
     }
 
 
-    // ====== Lógica: Puntos ======
+    
     void AgregarPunto()
     {
         if (TryGetDouble(puntoXIF?.text, out var x) && TryGetDouble(puntoYIF?.text, out var y))
@@ -128,7 +128,7 @@ public class UIEstudiantePunto : MonoBehaviour
         }
     }
 
-    // ====== Guardar ======
+
     void GuardarJSON()
     {
         Utilidades.GuardarEstudiantesJSON(listaE);
@@ -136,7 +136,7 @@ public class UIEstudiantePunto : MonoBehaviour
         Debug.Log("Guardado OK (Estudiantes y Puntos).");
     }
 
-    // ====== Helpers ======
+  
     void RefrescarUI()
     {
         if (listaEstudiantesTXT)
@@ -171,7 +171,7 @@ public class UIEstudiantePunto : MonoBehaviour
 
     bool TryGetDouble(string s, out double value)
     {
-        s = (s ?? "").Replace(",", "."); // acepta coma o punto
+        s = (s ?? "").Replace(",", ".");
         return double.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out value);
     }
 }
