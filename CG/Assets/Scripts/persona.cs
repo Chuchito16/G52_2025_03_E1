@@ -1,19 +1,16 @@
-using UnityEngine;
 using System;
-
+using UnityEngine;
 
 namespace packagePersona
 {
     [Serializable]
     public class Persona
     {
-        private string nombre;
-        private string EmailP;
-        private string Direct;
+        [SerializeField] private string nombre;
+        [SerializeField] private string EmailP;
+        [SerializeField] private string Direct;
 
-        public Persona()
-        { 
-        }
+        public Persona() { }
 
         public Persona(string nombre, string emailP, string direct)
         {

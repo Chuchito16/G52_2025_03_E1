@@ -1,18 +1,15 @@
-using UnityEngine;
 using System;
-
+using UnityEngine;
 
 namespace packagePersona
 {
     [Serializable]
     public class Estudiante : Persona
     {
-        private string codigoE;
-        private string nameCarreraE;
-    
-    public Estudiante()
-        {
-        }
+        [SerializeField] private string codigoE;
+        [SerializeField] private string nameCarreraE;
+
+        public Estudiante() { }
 
         public Estudiante(string codigoE, string nameCarreraE, string nombre, string emailP, string direct)
             : base(nombre, emailP, direct)
