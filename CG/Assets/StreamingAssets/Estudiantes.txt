@@ -1,0 +1,20 @@
+David Castro,dacastro@uao.edu.co,calle45,21478,Ingenieria Multimedia
+Laura Gómez,lgomez@uao.edu.co,carrera12#34-56,21479,Ingenieria Industrial
+Carlos Pérez,cperez@uao.edu.co,avenida3#45-67,21480,Administración de Empresas
+María Fernández,mfernandez@uao.edu.co,calle10#23-45,21481,Ingenieria Multimedia
+Juan Rodríguez,jrodriguez@uao.edu.co,carrera8#12-34,21482,Diseño Gráfico
+Ana Martínez,amartinez@uao.edu.co,calle20#45-67,21483,Ingenieria Civil
+Pedro López,plopez@uao.edu.co,avenida5#67-89,21484,Ingenieria de Sistemas
+Sofía Torres,storres@uao.edu.co,calle15#56-78,21485,Contaduría Pública
+Luis Ramírez,lramirez@uao.edu.co,carrera9#12-34,21486,Ingenieria Multimedia
+Camila Herrera,cherrera@uao.edu.co,calle22#45-67,21487,Comunicación Social
+Andrés Vargas,avargas@uao.edu.co,avenida6#78-90,21488,Ingenieria Industrial
+Paula Ríos,prios@uao.edu.co,carrera14#23-45,21489,Psicología
+Felipe Mendoza,fmendoza@uao.edu.co,calle33#45-67,21490,Ingenieria Mecánica
+Valentina Silva,vsilva@uao.edu.co,avenida7#56-78,21491,Ingenieria Multimedia
+Diego Morales,dmorales@uao.edu.co,calle40#67-89,21492,Ingenieria Civil
+Carolina Castaño,ccastano@uao.edu.co,carrera15#12-34,21493,Derecho
+Esteban Arias,earias@uao.edu.co,avenida8#23-45,21494,Ingenieria Electrónica
+Natalia Patiño,npatino@uao.edu.co,calle50#45-67,21495,Ingenieria Multimedia
+Julián Soto,jsoto@uao.edu.co,carrera16#56-78,21496,Ingenieria de Sistemas
+Mónica Blanco,mblanco@uao.edu.co,avenida9#67-89,21497,Administración de Empresas

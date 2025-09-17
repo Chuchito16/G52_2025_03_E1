@@ -54,7 +54,15 @@ public class UIEstudiantePunto : MonoBehaviour
 
     void Start()
     {
-       
+        StartCoroutine(InitYcargar());
+    }
+
+    private System.Collections.IEnumerator InitYcargar()
+    {
+        // 1) Copia semilla si hace falta
+        yield return Utilidades.EnsureSeedFiles();
+
+        // 2) Ya puedes leer normalmente desde persistentDataPath
         var e = Utilidades.LeerEstudiantesJSON();
         if (e != null && e.Count > 0) listaE = e;
 
@@ -63,13 +71,10 @@ public class UIEstudiantePunto : MonoBehaviour
 
         RefrescarUI();
     }
-
     void OnDestroy()
     {
-        
         if (agregarEstudianteBtn) agregarEstudianteBtn.onClick.RemoveListener(AgregarEstudiante);
-        if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.AddListener(EliminarUltimoEstudiante);
-        if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.RemoveListener(EliminarUltimoEstudiante);
+        if (eliminarEstudianteBtn) eliminarEstudianteBtn.onClick.RemoveListener(EliminarUltimoEstudiante); // <-- deja solo Remove
         if (guardarJsonBtn) guardarJsonBtn.onClick.RemoveListener(GuardarJSON);
         if (agregarPuntoBtn) agregarPuntoBtn.onClick.RemoveListener(AgregarPunto);
         if (eliminarPuntoBtn) eliminarPuntoBtn.onClick.RemoveListener(EliminarUltimoPunto);
@@ -78,7 +83,7 @@ public class UIEstudiantePunto : MonoBehaviour
         if (puntoYIF) puntoYIF.onSubmit.RemoveAllListeners();
     }
 
-    
+
     void AgregarEstudiante()
     {
         if (string.IsNullOrWhiteSpace(nombreIF?.text) || string.IsNullOrWhiteSpace(codigoIF?.text))
